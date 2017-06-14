@@ -35,7 +35,7 @@ type IChoiceProperty =
         abstract member Choice : List<string>
 
 [<JavaScript>]
-module Parameters = 
+module Properties = 
 
     let string name var = {new IProperty with 
                                                 override x.Name = name

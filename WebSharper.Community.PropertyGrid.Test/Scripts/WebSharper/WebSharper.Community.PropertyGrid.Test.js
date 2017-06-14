@@ -1,7 +1,7 @@
 (function()
 {
  "use strict";
- var Global,WebSharper,Community,PropertyGrid,Test,Client,SC$1,UI,Next,Doc,IntelliFactory,Runtime,Var,List,Parameters,PropertyGrid$1;
+ var Global,WebSharper,Community,PropertyGrid,Test,Client,SC$1,UI,Next,Doc,IntelliFactory,Runtime,Var,List,Properties,PropertyGrid$1;
  Global=window;
  WebSharper=Global.WebSharper=Global.WebSharper||{};
  Community=WebSharper.Community=WebSharper.Community||{};
@@ -16,7 +16,7 @@
  Runtime=IntelliFactory&&IntelliFactory.Runtime;
  Var=Next&&Next.Var;
  List=WebSharper&&WebSharper.List;
- Parameters=PropertyGrid&&PropertyGrid.Parameters;
+ Properties=PropertyGrid&&PropertyGrid.Properties;
  PropertyGrid$1=PropertyGrid&&PropertyGrid.PropertyGrid;
  Client.Main=function()
  {
@@ -54,7 +54,7 @@
   SC$1.strVar=Var.Create$1("my_string");
   SC$1.dblVar=Var.Create$1(123.456);
   SC$1.selVar=Var.Create$1("bla2");
-  SC$1.props=List.ofArray([Parameters.string("string_ex",Client.strVar()),Parameters["double"]("double_ex",Client.dblVar()),Parameters.select("selection_ex",List.ofArray(["bla1","bla2","bla3"]),Client.selVar())]);
+  SC$1.props=List.ofArray([Properties.string("string_ex",Client.strVar()),Properties["double"]("double_ex",Client.dblVar()),Properties.select("selection_ex",List.ofArray(["bla1","bla2","bla3"]),Client.selVar())]);
   SC$1.propertyGrid=PropertyGrid$1.get_Create();
   Client.propertyGrid().Edit(Client.props());
   SC$1.$cctor=Global.ignore;

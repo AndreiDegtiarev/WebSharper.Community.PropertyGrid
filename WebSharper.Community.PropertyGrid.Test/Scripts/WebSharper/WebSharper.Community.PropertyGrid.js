@@ -1,13 +1,13 @@
 (function()
 {
  "use strict";
- var Global,WebSharper,Community,PropertyGrid,PropertyItem,Parameters,PropertyGrid$1,UI,Next,Key,AttrProxy,Doc,IntelliFactory,Runtime,AttrModule,List,ListModel;
+ var Global,WebSharper,Community,PropertyGrid,PropertyItem,Properties,PropertyGrid$1,UI,Next,Key,AttrProxy,Doc,IntelliFactory,Runtime,AttrModule,List,ListModel;
  Global=window;
  WebSharper=Global.WebSharper=Global.WebSharper||{};
  Community=WebSharper.Community=WebSharper.Community||{};
  PropertyGrid=Community.PropertyGrid=Community.PropertyGrid||{};
  PropertyItem=PropertyGrid.PropertyItem=PropertyGrid.PropertyItem||{};
- Parameters=PropertyGrid.Parameters=PropertyGrid.Parameters||{};
+ Properties=PropertyGrid.Properties=PropertyGrid.Properties||{};
  PropertyGrid$1=PropertyGrid.PropertyGrid=PropertyGrid.PropertyGrid||{};
  UI=WebSharper&&WebSharper.UI;
  Next=UI&&UI.Next;
@@ -30,7 +30,7 @@
    Property:Property
   };
  };
- Parameters.select=function(name,selections,_var)
+ Properties.select=function(name,selections,_var)
  {
   return{
    WebSharper_Community_PropertyGrid_IProperty$get_Render:function()
@@ -45,7 +45,7 @@
    }
   };
  };
- Parameters["double"]=function(name,_var)
+ Properties["double"]=function(name,_var)
  {
   return{
    WebSharper_Community_PropertyGrid_IProperty$get_Render:function()
@@ -58,7 +58,7 @@
    }
   };
  };
- Parameters.string=function(name,_var)
+ Properties.string=function(name,_var)
  {
   return{
    WebSharper_Community_PropertyGrid_IProperty$get_Render:function()
@@ -107,10 +107,10 @@
    return item.Key;
   },a)));
  };
- PropertyGrid$1.New=function(Properties)
+ PropertyGrid$1.New=function(Properties$1)
  {
   return new PropertyGrid$1({
-   Properties:Properties
+   Properties:Properties$1
   });
  };
 }());

@@ -14,9 +14,9 @@ module Client =
     let dblVar=Var.Create 123.456
     let selVar = Var.Create "bla2"
     let props =[
-                    Parameters.string "string_ex" strVar
-                    Parameters.double "double_ex" dblVar
-                    Parameters.select "selection_ex" ["bla1";"bla2";"bla3"] selVar
+                    Properties.string "string_ex" strVar
+                    Properties.double "double_ex" dblVar
+                    Properties.select "selection_ex" ["bla1";"bla2";"bla3"] selVar
                 ]
     let propertyGrid = PropertyGrid.Create
     propertyGrid.Edit props
