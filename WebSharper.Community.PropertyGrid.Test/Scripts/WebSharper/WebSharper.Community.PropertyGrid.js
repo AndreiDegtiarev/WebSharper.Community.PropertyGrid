@@ -1,15 +1,13 @@
 (function()
 {
  "use strict";
- var Global,WebSharper,Community,PropertyGrid,PropertyItem,Parameters,Order,SC$1,PropertyGrid$1,UI,Next,Key,AttrProxy,Doc,IntelliFactory,Runtime,Var,AttrModule,List,ListModel;
+ var Global,WebSharper,Community,PropertyGrid,PropertyItem,Parameters,PropertyGrid$1,UI,Next,Key,AttrProxy,Doc,IntelliFactory,Runtime,AttrModule,List,ListModel;
  Global=window;
  WebSharper=Global.WebSharper=Global.WebSharper||{};
  Community=WebSharper.Community=WebSharper.Community||{};
  PropertyGrid=Community.PropertyGrid=Community.PropertyGrid||{};
  PropertyItem=PropertyGrid.PropertyItem=PropertyGrid.PropertyItem||{};
  Parameters=PropertyGrid.Parameters=PropertyGrid.Parameters||{};
- Order=Parameters.Order=Parameters.Order||{};
- SC$1=Global.StartupCode$WebSharper_Community_PropertyGrid$Properties=Global.StartupCode$WebSharper_Community_PropertyGrid$Properties||{};
  PropertyGrid$1=PropertyGrid.PropertyGrid=PropertyGrid.PropertyGrid||{};
  UI=WebSharper&&WebSharper.UI;
  Next=UI&&UI.Next;
@@ -18,7 +16,6 @@
  Doc=Next&&Next.Doc;
  IntelliFactory=Global.IntelliFactory;
  Runtime=IntelliFactory&&IntelliFactory.Runtime;
- Var=Next&&Next.Var;
  AttrModule=Next&&Next.AttrModule;
  List=WebSharper&&WebSharper.List;
  ListModel=Next&&Next.ListModel;
@@ -33,11 +30,7 @@
    Property:Property
   };
  };
- Order.Show=function(order)
- {
-  return order.$==1?"Newest":"Alphabetical";
- };
- Parameters.selection=function(name,selections,_var)
+ Parameters.select=function(name,selections,_var)
  {
   return{
    WebSharper_Community_PropertyGrid_IProperty$get_Render:function()
@@ -51,11 +44,6 @@
     return name;
    }
   };
- };
- Parameters.order=function()
- {
-  SC$1.$cctor();
-  return SC$1.order;
  };
  Parameters["double"]=function(name,_var)
  {
@@ -83,13 +71,6 @@
    }
   };
  };
- SC$1.$cctor=Runtime.Cctor(function()
- {
-  SC$1.order=Var.Create$1({
-   $:1
-  });
-  SC$1.$cctor=Global.ignore;
- });
  PropertyGrid$1=PropertyGrid.PropertyGrid=Runtime.Class({
   get_Render:function()
   {

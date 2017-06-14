@@ -45,16 +45,7 @@ module Parameters =
                                                  override x.Name = name
                                                  override x.Render = Doc.FloatInputUnchecked [] var
                                          }
-    type Order = Alphabetical | Newest
-    type Order with
-            static member Show order =
-
-                match order with
-                | Alphabetical -> "Alphabetical"
-
-                | Newest -> "Newest"
-    let order = Var.Create Newest
-    let selection name selections var= {new IProperty with 
+    let select name selections var= {new IProperty with 
                                                  override x.Name = name
                                                  override x.Render = Doc.Select [Attr.Create "class" "form-control"] (fun str -> str) selections var
                                          }
