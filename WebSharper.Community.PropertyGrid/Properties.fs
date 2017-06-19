@@ -10,7 +10,8 @@ open WebSharper.UI.Next.Html
 [<JavaScript>]
 type IProperty =
         abstract member Name : string
-        abstract member Render : Elt
+        abstract member Render : Doc
+      
 
 [<JavaScript>]
 type PropertyItem =
@@ -30,23 +31,30 @@ type IValueProperty<'T> =
         abstract member Variable : IRef<'T> 
 
 [<JavaScript>]
-type IChoiceProperty =
-    inherit IProperty
-        abstract member Choice : List<string>
+type IGroupProperty(name) =
+    interface IProperty with
+        override x.Name = name
+        override x.Render = Doc.TextNode name
 
 [<JavaScript>]
 module Properties = 
 
     let string name var = {new IProperty with 
                                                 override x.Name = name
-                                                override x.Render = Doc.Input [] var
+                                                override x.Render = Doc.Input [] var :>Doc
+                                             
                                          }
     let double name var = {new IProperty with 
                                                  override x.Name = name
-                                                 override x.Render = Doc.FloatInputUnchecked [] var
+                                                 override x.Render = Doc.FloatInputUnchecked [] var :>Doc
+                                               
                                          }
     let select name selections var= {new IProperty with 
                                                  override x.Name = name
-                                                 override x.Render = Doc.Select [Attr.Create "class" "form-control"] (fun str -> str) selections var
+                                                 override x.Render = Doc.Select [Attr.Class "form-control"] (fun str -> str) selections var  :>Doc
                                          }
-
+    let check name var= {new IProperty with 
+                                            override x.Name = name
+                                            override x.Render = Doc.CheckBox [Attr.Class "form-control"] var  :>Doc
+                                         }
+    let group name = IGroupProperty(name) :> IProperty

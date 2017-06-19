@@ -19,16 +19,26 @@ type PropertyGrid =
         x.Properties.Clear()
         x.Properties.AppendMany (properties |> List.map (PropertyItem.Create))
     member x.Render =
-       let renderItem (item:PropertyItem)= 
-           trAttr[]
-              [
-                 tdAttr [] [text item.Property.Name]
-                 tdAttr [] [( item.Property.Render)]
-                             
+       let renderItem (item:PropertyItem)=
+           if item.Property :? IGroupProperty then
+            table[
+               trAttr[] 
+                [
+                    tdAttr [Attr.Class "td-group"] [item.Property.Render]
+                ]
+               ]     
+           else
+             table[
+               trAttr[]
+                  [
+                     tdAttr [Attr.Class "td-no-group"] [text item.Property.Name]
+                     tdAttr [Attr.Class "td-no-group"] [( item.Property.Render)]        
+                  ]
               ]
        divAttr [Attr.Class "propertyGrid"]
            [
                ListModel.View x.Properties
                |> Doc.BindSeqCachedBy (fun m -> m.Key) renderItem
+              
            ]
     
