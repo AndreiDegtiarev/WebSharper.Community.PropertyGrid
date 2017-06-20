@@ -160,9 +160,7 @@
   return Seq.unfold(function($1)
   {
    return gen($1[0],$1[1]);
-  },[t,new List$1.T({
-   $:0
-  })]);
+  },[t,List$1.T.Empty]);
  };
  BalancedTree.Branch=function(node,left,right)
  {
@@ -196,7 +194,10 @@
   {
    return Seq.collect(function(m)
    {
-    return[Pair.New(m[0],m[1])];
+    var v,k;
+    v=m[1];
+    k=m[0];
+    return[Pair.New(k,v)];
    },Seq.distinctBy(function(t)
    {
     return t[0];
@@ -381,7 +382,7 @@
  };
  Map.Partition=function(f,m)
  {
-  var p,p$1,data,data$1;
+  var p,p$1,y,x;
   p=(p$1=function(kv)
   {
    return f(kv.Key,kv.Value);
@@ -389,7 +390,9 @@
   {
    return Arrays.partition(p$1,a);
   }(Arrays.ofSeq(BalancedTree.Enumerate(false,m.get_Tree()))));
-  return[new FSharpMap.New$1((data=p[0],BalancedTree.Build(data,0,data.length-1))),new FSharpMap.New$1((data$1=p[1],BalancedTree.Build(data$1,0,data$1.length-1)))];
+  y=p[1];
+  x=p[0];
+  return[new FSharpMap.New$1(BalancedTree.Build(x,0,x.length-1)),new FSharpMap.New$1(BalancedTree.Build(y,0,y.length-1))];
  };
  Map.OfArray=function(a)
  {
@@ -582,6 +585,17 @@
    return this.GetEnumerator$1();
   }
  },null,FSharpSet);
+ FSharpSet.op_Subtraction=function(x,y)
+ {
+  return Set.Filter(function(x$1)
+  {
+   return!y.Contains(x$1);
+  },x);
+ };
+ FSharpSet.op_Addition=function(x,y)
+ {
+  return new FSharpSet.New$1(BalancedTree.OfSeq(Seq.append(x,y)));
+ };
  FSharpSet.New=Runtime.Ctor(function(s)
  {
   FSharpSet.New$1.call(this,BalancedTree.OfSeq(s));
@@ -592,9 +606,11 @@
  },FSharpSet);
  Set.Partition=function(f,a)
  {
-  var p;
+  var p,y,x;
   p=Arrays.partition(f,Arrays.ofSeq(a));
-  return[new FSharpSet.New$1(BalancedTree.OfSeq(p[0])),new FSharpSet.New$1(BalancedTree.OfSeq(p[1]))];
+  y=p[1];
+  x=p[0];
+  return[new FSharpSet.New$1(BalancedTree.OfSeq(x)),new FSharpSet.New$1(BalancedTree.OfSeq(y))];
  };
  Set.FoldBack=function(f,a,s)
  {
@@ -1551,12 +1567,13 @@
    {
     return Seq.collect(function(m)
     {
-     var o;
+     var o,is;
      o=m[0];
+     is=m[1];
      return Seq.map(function(i)
      {
       return resultSelector(o,i);
-     },m[1]);
+     },is);
     },a);
    }));
   });
@@ -1629,7 +1646,10 @@
    }
    a=function(i,t$1)
    {
-    return Arrays.set(a$1,i,resultSelector(t$1[0],t$1[1]));
+    var o,is;
+    o=t$1[0];
+    is=t$1[1];
+    return Arrays.set(a$1,i,resultSelector(o,is));
    };
    (function(a$2)
    {

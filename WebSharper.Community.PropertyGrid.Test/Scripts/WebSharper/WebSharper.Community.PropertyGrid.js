@@ -132,9 +132,7 @@
  PropertyGrid$1.get_Create=function()
  {
   var a;
-  return PropertyGrid$1.New((a=new List.T({
-   $:0
-  }),ListModel.Create(function(item)
+  return PropertyGrid$1.New((a=List.T.Empty,ListModel.Create(function(item)
   {
    return item.Key;
   },a)));
