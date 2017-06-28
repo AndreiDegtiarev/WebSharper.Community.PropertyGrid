@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
-    <style>
+   <style>
         /* Sticky footer styles */
         html {
             position: relative;
@@ -20,7 +20,8 @@
         .td-no-group
         {
             background-color:white;
-            border:solid 1px darkgrey;
+            border-top: solid 1px darkgrey;
+            border-right: solid 1px darkgrey;
             border-collapse: collapse;
             width: 175px; 
             height: 30px; 
@@ -28,6 +29,7 @@
         .td-group
         {
             background-color: aliceblue;
+            border-top: solid 1px darkgrey;
             color: black;
             font-weight: bolder;
             font-style: normal;
@@ -35,13 +37,19 @@
             width: 350px;
         }
         .form-control{
-            box-shadow: none; 
+            padding-left: 0px;
+        }
+        input[type=checkbox]{
+            width: 15px !important;
+            margin-left: 2px;
         }
         div.propertyGrid input
         {
             border:0px;
             height:18px;
             width: 100px;
+            margin-left: 2px;
+            
         } 
         .footer {
             position: absolute;
