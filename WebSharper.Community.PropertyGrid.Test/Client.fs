@@ -18,7 +18,7 @@ module Client =
                     Properties.group "Settings"
                     Properties.string "string_ex" strVar
                     Properties.double "double_ex" dblVar
-                    Properties.select "selection_ex" ["bla1";"bla2";"bla3"] selVar
+                    Properties.select "selection_ex" (fun str -> str)["bla1";"bla2";"bla3"] selVar
                     Properties.group "Plugins"
                     Properties.string "string_ex" strVar
                     Properties.double "double_ex" dblVar

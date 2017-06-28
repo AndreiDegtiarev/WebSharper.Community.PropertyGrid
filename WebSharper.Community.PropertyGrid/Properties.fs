@@ -49,9 +49,9 @@ module Properties =
                                                  override x.Render = Doc.FloatInputUnchecked [] var :>Doc
                                                
                                          }
-    let select name selections var= {new IProperty with 
+    let select name fncCnv selections var= {new IProperty with 
                                                  override x.Name = name
-                                                 override x.Render = Doc.Select [Attr.Class "form-control"] (fun str -> str) selections var  :>Doc
+                                                 override x.Render = Doc.Select [Attr.Class "form-control"] fncCnv selections var  :>Doc
                                          }
     let check name var= {new IProperty with 
                                             override x.Name = name

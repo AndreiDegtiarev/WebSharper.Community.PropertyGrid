@@ -60,7 +60,7 @@
   SC$1.dblVar=Var.Create$1(123.456);
   SC$1.selVar=Var.Create$1("bla2");
   SC$1.chkBoxVar=Var.Create$1(true);
-  SC$1.props=List.ofArray([Properties.group("Settings"),Properties.string("string_ex",Client.strVar()),Properties["double"]("double_ex",Client.dblVar()),Properties.select("selection_ex",List.ofArray(["bla1","bla2","bla3"]),Client.selVar()),Properties.group("Plugins"),Properties.string("string_ex",Client.strVar()),Properties["double"]("double_ex",Client.dblVar()),Properties.check("Temperature",Client.chkBoxVar()),Properties.group("Advanced Settings"),Properties.string("string_ex",Client.strVar()),Properties["double"]("double_ex",Client.dblVar())]);
+  SC$1.props=List.ofArray([Properties.group("Settings"),Properties.string("string_ex",Client.strVar()),Properties["double"]("double_ex",Client.dblVar()),Properties.select("selection_ex",Global.id,List.ofArray(["bla1","bla2","bla3"]),Client.selVar()),Properties.group("Plugins"),Properties.string("string_ex",Client.strVar()),Properties["double"]("double_ex",Client.dblVar()),Properties.check("Temperature",Client.chkBoxVar()),Properties.group("Advanced Settings"),Properties.string("string_ex",Client.strVar()),Properties["double"]("double_ex",Client.dblVar())]);
   SC$1.propertyGrid=PropertyGrid$1.get_Create();
   Client.propertyGrid().Edit(Client.props());
   SC$1.$cctor=Global.ignore;
