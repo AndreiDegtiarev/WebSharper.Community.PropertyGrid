@@ -14,7 +14,8 @@ body {
     border-top: solid 1px darkgrey;
     border-right: solid 1px darkgrey;
     border-collapse: collapse;
-    width: 175px; 
+    /*width: 175px;*/
+    -webkit-column-width: 175px; 
     height: 30px; 
 }
 .td-group
@@ -25,7 +26,8 @@ body {
     font-weight: bolder;
     font-style: normal;
     font-size: initial;
-    width: 350px;
+    /*width: 350px;*/
+    -webkit-column-width: 352px;
 }
 .form-control{
     padding-left: 0px;
@@ -38,7 +40,7 @@ div.propertyGrid input
 {
     border:0px;
     height:18px;
-    width: 100px;
+    -webkit-column-width: 100px;
     margin-left: 2px;
     
 } 
