@@ -14,9 +14,9 @@ body {
     border-top: solid 1px darkgrey;
     border-right: solid 1px darkgrey;
     border-collapse: collapse;
-    /*width: 175px;*/
-    -webkit-column-width: 175px; 
+    width: 175px;
     height: 30px; 
+    line-height: 1.35;
 }
 .td-group
 {
@@ -26,8 +26,7 @@ body {
     font-weight: bolder;
     font-style: normal;
     font-size: initial;
-    /*width: 350px;*/
-    -webkit-column-width: 352px;
+    width: 350px;
 }
 .form-control{
     padding-left: 0px;
@@ -39,10 +38,8 @@ input[type=checkbox]{
 div.propertyGrid input
 {
     border:0px;
-    height:18px;
-    -webkit-column-width: 100px;
-    margin-left: 2px;
-    
+    width: 100px
+    margin-left: 2px;   
 } 
 .footer {
     position: absolute;
