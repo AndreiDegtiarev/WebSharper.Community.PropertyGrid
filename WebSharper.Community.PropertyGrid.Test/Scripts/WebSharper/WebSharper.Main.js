@@ -3371,9 +3371,7 @@
         $:1
        }),r.$1=t,t);
       }
-     (function()
-     {
-     }(void(r.$1=y)));
+     r.$1=y;
      return res;
     }
  };

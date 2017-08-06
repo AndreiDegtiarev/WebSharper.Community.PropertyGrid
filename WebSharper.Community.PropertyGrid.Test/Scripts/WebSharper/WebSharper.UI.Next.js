@@ -1,7 +1,7 @@
 (function()
 {
  "use strict";
- var WebSharper,UI,Next,Array,String,Abbrev,Fresh,HashSet,Dict,Slot,Async,Mailbox,MailboxState,SC$1,AppendList,SC$2,DomUtility,SC$3,Trie,LookupResult,SC$4,Snap,Var,Updates,View,ViewBuilder,Submitter,Key,Model,Serializer,Storage,ArrayStorage,LocalStorageBackend,ListModel,ListModels,SC$5,ReactiveExtensions,DoubleInterpolation,Interpolation,Easing,Easings,An,Anims,Trans,SC$6,AnimatedAttrNode,DynamicAttrNode,AttrProxy,Client,Attrs,Dyn,Attrs$1,CheckedInput,AttrModule,SC$7,DocElemNode,Docs,DomNodes,NodeSet,RunState,Docs$1,Doc,Elt,EltUpdater,SC$8,Flow,FlowBuilder,Html,attr,Route,Routing,State,RouteMap,Router,Input,MousePosSt,MouseBtnSt,Mouse,KeyListenerSt,Keyboard,SC$9,List,Arrays,Enumerator,Strings,Char,Collections,HashSet$1,Seq,IntelliFactory,Runtime,Unchecked,console,Concurrency,Map,FSharpMap,List$1,Operators,Queue,Lazy,Dictionary,JSON,Numeric,Node,$,Slice,String$1,Symbol;
+ var WebSharper,UI,Next,Array,String,Abbrev,Fresh,HashSet,Dict,Slot,Async,Mailbox,MailboxState,SC$1,AppendList,SC$2,DomUtility,SC$3,Trie,LookupResult,SC$4,Snap,Var,Updates,View,ViewBuilder,Submitter,Key,Model,Serializer,Storage,ArrayStorage,LocalStorageBackend,ListModel,ListModels,SC$5,ReactiveExtensions,DoubleInterpolation,Interpolation,Easing,Easings,An,Anims,Trans,SC$6,AnimatedAttrNode,DynamicAttrNode,AttrProxy,Client,Attrs,Dyn,Attrs$1,CheckedInput,AttrModule,SC$7,DocElemNode,Docs,DomNodes,NodeSet,RunState,Docs$1,Doc,Elt,EltUpdater,SC$8,Flow,FlowBuilder,Html,attr,Route,Routing,State,RouteMap,Router,Input,MousePosSt,MouseBtnSt,Mouse,KeyListenerSt,Keyboard,SC$9,List,Arrays,Enumerator,Strings,Char,Collections,HashSet$1,Seq,IntelliFactory,Runtime,Unchecked,console,Concurrency,Map,FSharpMap,List$1,Operators,Queue,Lazy,Dictionary,JSON,Numeric,Node,$,Slice,String$1;
  WebSharper=window.WebSharper=window.WebSharper||{};
  UI=WebSharper.UI=WebSharper.UI||{};
  Next=UI.Next=UI.Next||{};
@@ -109,7 +109,6 @@
  $=window.jQuery;
  Slice=WebSharper&&WebSharper.Slice;
  String$1=window.String;
- Symbol=window.Symbol;
  Array.mapInPlace=function(f,arr)
  {
   var i,$1;
@@ -4403,11 +4402,11 @@
    name$1=fillWith.nodeName.toLowerCase();
    DomUtility.IterSelector(instance,"[ws-attr-holes]",function(e)
    {
-    var holeAttrs,i,$1,attrName;
+    var holeAttrs,i,$1,attrName,_this;
     holeAttrs=Strings.SplitChars(e.getAttribute("ws-attr-holes"),[32],1);
     for(i=0,$1=holeAttrs.length-1;i<=$1;i++){
      attrName=Arrays.get(holeAttrs,i);
-     e.setAttribute(attrName,new window.RegExp("\\${"+name$1+"}","ig")[Symbol.replace](e.getAttribute(attrName),fillWith.textContent));
+     e.setAttribute(attrName,(_this=new window.RegExp("\\${"+name$1+"}","ig"),e.getAttribute(attrName).replace(_this,fillWith.textContent)));
     }
    });
    m$1=instance.querySelector("[ws-hole="+name$1+"]");
@@ -4469,7 +4468,7 @@
   }
   convertAttrs=function(el)
   {
-   var attrs,toRemove,events,holedAttrs,i,$1,a;
+   var attrs,toRemove,events,holedAttrs,i,$1,a,_this;
    function lowercaseAttr(name$1)
    {
     var m;
@@ -4485,10 +4484,10 @@
     Strings.StartsWith(a.nodeName,"ws-on")&&a.nodeName!=="ws-onafterrender"&&a.nodeName!=="ws-on"?(toRemove.push(a.nodeName),events.push(Slice.string(a.nodeName,{
      $:1,
      $0:"ws-on".length
-    },null)+":"+a.nodeValue.toLowerCase())):!Strings.StartsWith(a.nodeName,"ws-")&&(new window.RegExp(Docs$1.TextHoleRE())).test(a.nodeValue)?(a.nodeValue=new window.RegExp(Docs$1.TextHoleRE(),"g")[Symbol.replace](a.nodeValue,function($2,$3)
+    },null)+":"+a.nodeValue.toLowerCase())):!Strings.StartsWith(a.nodeName,"ws-")&&(new window.RegExp(Docs$1.TextHoleRE())).test(a.nodeValue)?(a.nodeValue=(_this=new window.RegExp(Docs$1.TextHoleRE(),"g"),a.nodeValue.replace(_this,function($2,$3)
     {
      return"${"+$3.toLowerCase()+"}";
-    }),holedAttrs.push(a.nodeName)):void 0;
+    })),holedAttrs.push(a.nodeName)):void 0;
    }
    !(events.length==0)?el.setAttribute("ws-on",Strings.concat(" ",events)):void 0;
    !(holedAttrs.length==0)?el.setAttribute("ws-attr-holes",Strings.concat(" ",holedAttrs)):void 0;
@@ -4585,7 +4584,7 @@
      {
       var a$1;
       a$1=Operators.KeyValue(a);
-      return new window.RegExp("\\${"+a$1[0]+"}","ig")[Symbol.replace](s,"${"+a$1[1]+"}");
+      return s.replace(new window.RegExp("\\${"+a$1[0]+"}","ig"),"${"+a$1[1]+"}");
      },(Runtime.Curried3(Seq.fold))(f))(e.getAttribute(attrName)))(mappings));
     }());
    });
@@ -4644,14 +4643,14 @@
    });
    return DomUtility.IterSelector(instance,"[ws-attr-holes]",function(e)
    {
-    var holeAttrs,i,$1,attrName;
+    var holeAttrs,i,$1,attrName,_this;
     holeAttrs=Strings.SplitChars(e.getAttribute("ws-attr-holes"),[32],1);
     for(i=0,$1=holeAttrs.length-1;i<=$1;i++){
      attrName=Arrays.get(holeAttrs,i);
-     e.setAttribute(attrName,new window.RegExp(Docs$1.TextHoleRE(),"g")[Symbol.replace](e.getAttribute(attrName),function($2,$3)
+     e.setAttribute(attrName,(_this=new window.RegExp(Docs$1.TextHoleRE(),"g"),e.getAttribute(attrName).replace(_this,function($2,$3)
      {
       return dontRemove.Contains($3)?$2:"";
-     }));
+     })));
     }
    });
   };
