@@ -51,6 +51,9 @@
     <Compile Include="Properties.fs" />
     <Compile Include="PropertyGrid.fs" />
     <Content Include="packages.config" />
+    <EmbeddedResource Include="PropertyGridProj.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="HtmlAgilityPack">
