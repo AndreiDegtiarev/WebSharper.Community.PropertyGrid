@@ -9,6 +9,8 @@ open WebSharper.Core.Resources
 
 [<JavaScript>]
 module Resources =
+    [<assembly: System.Web.UI.WebResource("PropertyGridProj.css", "text/css")>]
+    do()
     type StyleResource() =
         inherit BaseResource("PropertyGridProj.css")
 
