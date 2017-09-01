@@ -5,14 +5,6 @@ open WebSharper.JavaScript
 open WebSharper.UI.Next
 open WebSharper.UI.Next.Client
 open WebSharper.UI.Next.Html
-open WebSharper.Core.Resources
-
-[<JavaScript>]
-module Resources =
-    [<assembly: System.Web.UI.WebResource("PropertyGridProj.css", "text/css")>]
-    do()
-    type StyleResource() =
-        inherit BaseResource("PropertyGridProj.css")
 
 [<JavaScript>]
 type PropertyGrid =
