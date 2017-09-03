@@ -7,6 +7,8 @@ open WebSharper.UI.Next.Client
 open WebSharper.UI.Next.Html
 open WebSharper.Community.PropertyGrid
 
+
+[<Require(typeof<WebSharper.Community.PropertyGrid.Resources.StyleResource>)>]
 [<JavaScript>]
 module Client =
 

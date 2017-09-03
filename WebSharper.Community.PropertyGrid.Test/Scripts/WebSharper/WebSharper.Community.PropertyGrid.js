@@ -1,8 +1,9 @@
 (function()
 {
  "use strict";
- var WebSharper,Community,PropertyGrid,PropertyItem,IGroupProperty,Properties,PropertyGrid$1,UI,Next,Key,IntelliFactory,Runtime,Doc,AttrModule,List,ListModel;
- WebSharper=window.WebSharper=window.WebSharper||{};
+ var Global,WebSharper,Community,PropertyGrid,PropertyItem,IGroupProperty,Properties,PropertyGrid$1,UI,Next,Key,IntelliFactory,Runtime,Doc,AttrModule,List,ListModel;
+ Global=window;
+ WebSharper=Global.WebSharper=Global.WebSharper||{};
  Community=WebSharper.Community=WebSharper.Community||{};
  PropertyGrid=Community.PropertyGrid=Community.PropertyGrid||{};
  PropertyItem=PropertyGrid.PropertyItem=PropertyGrid.PropertyItem||{};
@@ -12,7 +13,7 @@
  UI=WebSharper&&WebSharper.UI;
  Next=UI&&UI.Next;
  Key=Next&&Next.Key;
- IntelliFactory=window.IntelliFactory;
+ IntelliFactory=Global.IntelliFactory;
  Runtime=IntelliFactory&&IntelliFactory.Runtime;
  Doc=Next&&Next.Doc;
  AttrModule=Next&&Next.AttrModule;
@@ -38,7 +39,7 @@
   {
    return this.name;
   }
- },null,IGroupProperty);
+ },WebSharper.Obj,IGroupProperty);
  IGroupProperty.New=Runtime.Ctor(function(name)
  {
   this.name=name;
