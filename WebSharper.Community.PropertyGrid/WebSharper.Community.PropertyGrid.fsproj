@@ -6,9 +6,10 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{19fe2a79-7b32-41d7-b6d9-d8423cdf23ce}</ProjectGuid>
     <WebSharperProject>Library</WebSharperProject>
-    <TargetFSharpCoreVersion>4.3.1.0</TargetFSharpCoreVersion>
+    <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
@@ -30,7 +31,7 @@
     <Name>WebSharper.Community.PropertyGrid</Name>
     <RootNamespace>WebSharper.Community.PropertyGrid</RootNamespace>
     <AssemblyName>WebSharper.Community.PropertyGrid</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <WarningLevel>3</WarningLevel>
   </PropertyGroup>
   <!-- F# targets -->
