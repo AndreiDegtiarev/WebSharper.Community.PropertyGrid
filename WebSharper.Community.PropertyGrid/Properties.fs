@@ -51,7 +51,9 @@ module Properties =
                                          }
     let select name fncCnv selections var= {new IProperty with 
                                                  override x.Name = name
-                                                 override x.Render = Doc.Select [Attr.Class "td-no-group"] fncCnv selections var  :>Doc
+                                                 override x.Render = Doc.Select [Attr.Class "td-no-group"
+                                                                                 Attr.Style "Width" "170px"
+                                                                                ] fncCnv selections var  :>Doc
                                          }
     let check name var= {new IProperty with 
                                             override x.Name = name
