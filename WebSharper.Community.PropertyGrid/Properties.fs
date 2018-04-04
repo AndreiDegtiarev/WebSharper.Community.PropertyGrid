@@ -2,9 +2,8 @@
 
 open WebSharper
 open WebSharper.JavaScript
-open WebSharper.UI.Next
-open WebSharper.UI.Next.Client
-open WebSharper.UI.Next.Html
+open WebSharper.UI
+open WebSharper.UI.Client
 
 
 [<JavaScript>]
@@ -28,7 +27,7 @@ type PropertyItem =
 [<JavaScript>]
 type IValueProperty<'T> =
     inherit IProperty
-        abstract member Variable : IRef<'T> 
+        abstract member Variable : Var<'T> 
 
 [<JavaScript>]
 type IGroupProperty(name) =

@@ -1,7 +1,7 @@
 (function()
 {
  "use strict";
- var Global,WebSharper,Community,PropertyGrid,Test,Client,SC$1,UI,Next,Doc,Var,List,Properties,PropertyGrid$1;
+ var Global,WebSharper,Community,PropertyGrid,Test,Client,SC$1,UI,Doc,Var,List,Properties,PropertyGrid$1;
  Global=window;
  WebSharper=Global.WebSharper=Global.WebSharper||{};
  Community=WebSharper.Community=WebSharper.Community||{};
@@ -10,9 +10,8 @@
  Client=Test.Client=Test.Client||{};
  SC$1=Global.StartupCode$WebSharper_Community_PropertyGrid_Test$Client=Global.StartupCode$WebSharper_Community_PropertyGrid_Test$Client||{};
  UI=WebSharper&&WebSharper.UI;
- Next=UI&&UI.Next;
- Doc=Next&&Next.Doc;
- Var=Next&&Next.Var;
+ Doc=UI&&UI.Doc;
+ Var=UI&&UI.Var;
  List=WebSharper&&WebSharper.List;
  Properties=PropertyGrid&&PropertyGrid.Properties;
  PropertyGrid$1=PropertyGrid&&PropertyGrid.PropertyGrid;

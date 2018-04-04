@@ -2,9 +2,9 @@
 
 open WebSharper
 open WebSharper.JavaScript
-open WebSharper.UI.Next
-open WebSharper.UI.Next.Client
-open WebSharper.UI.Next.Html
+open WebSharper.UI
+open WebSharper.UI.Client
+open WebSharper.UI.Html
 
 [<JavaScript>]
 type PropertyGrid =
@@ -21,21 +21,21 @@ type PropertyGrid =
     member x.Render =
        let renderItem (item:PropertyItem)=
            if item.Property :? IGroupProperty then
-               trAttr[] 
+               tr[] 
                 [
-                  tdAttr [Attr.Class "td-group"
+                       td[Attr.Class "td-group"
                           Html.attr.colspan "2"
                          ][item.Property.Render]
                 ]    
            else
-               trAttr[]
+               tr[]
                 [
-                  tdAttr [Attr.Class "td-no-group"] [text item.Property.Name]
-                  tdAttr [Attr.Class "td-no-group"] [( item.Property.Render)]        
+                  td [Attr.Class "td-no-group"] [text item.Property.Name]
+                  td [Attr.Class "td-no-group"] [( item.Property.Render)]        
                 ]
-       divAttr [Attr.Class "propertyGrid"]
+       div [Attr.Class "propertyGrid"]
            [
-             table
+             table[]
               [
                 ListModel.View x.Properties
                 |> Doc.BindSeqCachedBy (fun m -> m.Key) renderItem
